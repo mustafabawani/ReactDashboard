@@ -110,6 +110,7 @@ const Analysis = () => {
     }
   };
   
+  
   const handleCreate = () => {
     const chartData = formatDataForCharts(data, xAxis, yAxis);
   
@@ -172,19 +173,22 @@ const Analysis = () => {
             <div style={{ display: "flex", flexDirection: "row" }}>
               <Tooltip title="Bar Graph" placement="top">
                 <BarChartIcon
-                  style={{ cursor: "pointer", marginLeft: "2%", color: "white" }}
+                  style={{ cursor: "pointer", marginLeft: "2%",
+                  color: chartType === "Bar" ? "blue" : "white"  }}
                   onClick={() => setChartType("Bar")}
                 />
               </Tooltip>
               <Tooltip title="Pie Chart" placement="top">
                 <PieChartIcon
-                  style={{ cursor: "pointer", marginLeft: "10%", color: "white" }}
+                  style={{ cursor: "pointer", marginLeft: "2%",
+                  color: chartType === "Pie" ? "blue" : "white"  }}
                   onClick={() => setChartType("Pie")}
                 />
               </Tooltip>
               <Tooltip title="Line Chart" placement="top">
                 <ShowChart
-                  style={{ cursor: "pointer", marginLeft: "5%", color: "white" }}
+                  style={{ cursor: "pointer", marginLeft: "2%",
+                  color: chartType === "Line" ? "blue" : "white"  }}
                   onClick={() => setChartType("Line")}
                 />
               </Tooltip>
